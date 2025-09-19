@@ -9,7 +9,7 @@ import {
   MessageCircle,
   Instagram,
   Facebook,
-  Droplet,
+  // Droplet,
 } from "lucide-react";
 import splashscreen_icon from "./assets/splash-icon.png";
 import hosta_icon from "./assets/HOSTAICON.png";
@@ -101,6 +101,7 @@ function App() {
                   description:
                     "Find and book appointments with healthcare providers",
                   icon: <User className="w-12 h-12 text-emerald-600 mb-4" />,
+                  url: "https://hosta-chi.vercel.app/",
                 },
                 {
                   title: "Hospital Platform",
@@ -108,6 +109,7 @@ function App() {
                   icon: (
                     <Hospital className="w-12 h-12 text-emerald-600 mb-4" />
                   ),
+                  url: "https://hosta-hospitals.vercel.app/",
                 },
                 {
                   title: "Ambulance Platform",
@@ -115,23 +117,27 @@ function App() {
                   icon: (
                     <Ambulance className="w-12 h-12 text-emerald-600 mb-4" />
                   ),
+                  url: "https://ambulaces-hosta.vercel.app/",
                 },
-                {
-                  title: "Blood Bank",
-                  description: "Find, request, and manage blood donations",
-                  icon: <Droplet className="w-12 h-12 text-emerald-600 mb-4" />,
-                },
+                // {
+                //   title: "Blood Bank",
+                //   description: "Find, request, and manage blood donations",
+                //   icon: <Droplet className="w-12 h-12 text-emerald-600 mb-4" />,
+                //   url: "#",
+                // },
               ].map((platform) => (
-                <div
+                <a
                   key={platform.title}
-                  className="flex-1 min-w-[220px] max-w-[250px] bg-white p-6 rounded-lg shadow-lg border border-emerald-100 hover:border-emerald-300 transition-colors"
+                  href={platform.url}
+                  target="_blank"
+                  className="bg-white rounded-lg shadow-lg p-6 w-72 text-center hover:shadow-2xl transition-shadow"
                 >
                   {platform.icon}
-                  <h3 className="text-xl font-semibold text-emerald-700 mb-2">
+                  <h3 className="text-xl font-semibold mb-2 text-emerald-700">
                     {platform.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">{platform.description}</p>
-                </div>
+                  <p className="text-gray-600">{platform.description}</p>
+                </a>  
               ))}
             </div>
           </div>
